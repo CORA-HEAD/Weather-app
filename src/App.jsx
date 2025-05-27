@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-
 function App() {
   const [city, setCity] = useState('');
   const [weather, setWeather] = useState(null);
   const [error, setError] = useState('');
 
-  const API_KEY = '4aa24907e09a9dbec29e86af73786315'; 
+  const API_KEY =import.meta.env.VITE_OPEN_WEATHER_API;
 
   const getWeather = async () => {
     try {

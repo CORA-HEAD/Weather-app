@@ -7,10 +7,18 @@ function App() {
 
   const API_KEY =import.meta.env.VITE_OPEN_WEATHER_API;
 
+const formatCityName = (name) => {
+  return name
+    .split(' ')
+    .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+    .join(' ');
+};
+
   const getWeather = async () => {
     try {
+      const formattedCity = formatCityName(city);
       const response = await axios.get(
-        `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`
+        `https://api.openweathermap.org/data/2.5/weather?q=${formattedCityty}&appid=${API_KEY}&units=metric`
       );
       setWeather(response.data);
       setError('');

@@ -19,7 +19,7 @@ const formatCityName = (name) => {
     try {
       const formattedCity = formatCityName(city);
       const response = await axios.get(
-        `https://api.openweathermap.org/data/2.5/weather?q=${formattedCityty}&appid=${API_KEY}&units=metric`
+        `https://api.openweathermap.org/data/2.5/weather?q=${formattedCity}&appid=${API_KEY}&units=metric`
       );
       setWeather(response.data);
       setError('');
